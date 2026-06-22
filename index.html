@@ -1,174 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1);
-      background-size: 400% 400%;
-      animation: gradientBG 8s ease infinite;
-      overflow: hidden;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* 📦 Responsive Box */
-    .container {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      width: 90%;
-      max-width: 350px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    h2 {
-      font-size: 20px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 12px 18px;
-      font-size: 16px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      margin: 10px;
-    }
-
-    #yesBtn {
-      background-color: #4CAF50;
-      color: white;
-      animation: bounce 1.5s infinite;
-    }
-
-    #noBtn {
-      background-color: #f44336;
-      color: white;
-      position: absolute;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    #message {
-      margin-top: 20px;
-      font-size: 20px;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .show {
-      opacity: 1 !important;
-    }
-
-    /* ❤️ Hearts */
-    .heart {
-      position: absolute;
-      color: red;
-      font-size: 18px;
-      animation: floatUp 4s linear infinite;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-500px); opacity: 0; }
-    }
-
-    /* 🎉 Confetti */
-    .confetti {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      animation: fall 3s linear infinite;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(500px); }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <title>CSC Services Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h2>Do you know....?👀</h2>
+    <h1 class="title">CSC Digital Services</h1>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Service...">
+    </div>
 
-    <button id="yesBtn" onclick="celebrate()">What...?</button>
+    <div class="services" id="services">
 
+       <div class="card" data-name="aaple sarkar">
+            <img src="aple sarkar.png" alt="">
+            <h3>Aaple Sarkar</h3>
+            <a href="https://aaplesarkar.mahaonline.gov.in" target="_blank"></a>
+        </div>
 
-    <div id="message">Hey श्री-सखी🫶💕 <p> I Miss You...🫶💕 </div>
-  </div>
+       <div class="card" data-name="csc">
+            <img src="csc.png" alt="">
+            <h3>CSC</h3>
+            <a href="https://connect.csc.gov.in/account/authorize?response_type=code&client_id=0f8ca686-5a31-46b8-bb51-d9834ba9fa9d&redirect_uri=https%3A%2F%2Fdigitalseva.csc.gov.in%2Fauth%2Fcallback%2F&state=78000" target="_blank"></a>
+        </div>
 
-  <script>
-    function celebrate() {
-      document.getElementById("message").classList.add("show");
+       <div class="card" data-name="mahaDBT">
+            <img src="mahadbt.png" alt="">
+            <h3>mahaDBT</h3>
+            <a href="https://mahadbt.maharashtra.gov.in" target="_blank"></a>       
+        </div>
+       
+         <div class="card" data-name="PDE">
+            <img src="PDE.png" alt="">
+            <h3>Public Data Entry</h3>
+            <a href="https://pdeigr.maharashtra.gov.in" target="_blank"></a>
+        </div>
 
-      // 🎉 Confetti
-      for (let i = 0; i < 40; i++) {
-        let conf = document.createElement("div");
-        conf.className = "confetti";
-        conf.style.left = Math.random() * window.innerWidth + "px";
-        conf.style.top = "0px";
-        conf.style.backgroundColor = randomColor();
-        conf.style.animationDuration = (Math.random() * 2 + 2) + "s";
-        document.body.appendChild(conf);
+     <div class="card" data-name="pm kisan">
+            <img src="pm-kisan.png" alt="">
+            <h3>PM-KISAN</h3>
+            <a href="https://pmkisan.gov.in" target="_blank"></a>
+        </div>
 
-        setTimeout(() => conf.remove(), 3000);
-      }
-    }
+      <div class="card" data-name="PMFBY ">
+            <img src="PMFBY.png" alt="">
+            <h3>PMFBY </h3>
+            <a href="https://pmfby.gov.in" target="_blank"></a>
+        </div>
 
-    function moveNo() {
-      const btn = document.getElementById("noBtn");
-      const container = document.querySelector(".container");
+     <div class="card" data-name="Agristack">
+            <img src="agristack.png" alt="">
+            <h3>Agristack</h3>
+            <a href="https://mhfr.agristack.gov.in" target="_blank"></a>    
+        </div>
 
-      const maxX = container.clientWidth - btn.offsetWidth;
-      const maxY = container.clientHeight - btn.offsetHeight;
+    <div class="card" data-name="7/12">
+            <img src="7.12.png" alt="">
+            <h3>Digital 7/12 </h3>
+            <a href="https://digitalsatbara.mahabhumi.gov.in" target="_blank"></a>
+        </div>
 
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
+    <div class="card" data-name="mahabhulekh">
+            <img src="mahabhulekh.png" alt="">
+            <h3>Mahabhulekh</h3>
+            <a href="https://bhulekh.mahabhumi.gov.in" target="_blank"></a>    
+        </div>
 
-      btn.style.left = x + "px";
-      btn.style.top = y + "px";
-    }
+       <div class="card" data-name="aadhaar">
+            <img src="Aadhar.png" alt="">
+            <h3>Aadhaar</h3>
+            <a href="https://uidai.gov.in" target="_blank"></a>
+        </div>
 
-    // ❤️ Floating hearts
-    setInterval(() => {
-      let heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerText = "❤️";
-      heart.style.left = Math.random() * window.innerWidth + "px";
-      heart.style.top = window.innerHeight + "px";
-      document.body.appendChild(heart);
+     <div class="card" data-name="pan">
+            <img src="pancard.png" alt="">
+            <h3>PAN</h3>
+            <a href="https://www.onlineservices.nsdl.com" target="_blank"></a>
+        </div>
 
-      setTimeout(() => heart.remove(), 4000);
-    }, 400);
+    <div class="card" data-name="ayushman">
+            <img src="ayushman-card.png" alt="">
+            <h3>Ayushman</h3>
+            <a href="https://beneficiary.nha.gov.in" target="_blank"></a>
+        </div>
 
-    function randomColor() {
-      const colors = ["red", "blue", "yellow", "green", "pink", "orange"];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-  </script>
+    <div class="card" data-name="Voter ID">
+            <img src="voter-id.png" alt="">
+            <h3>Voter ID</h3>
+            <a href="https://voters.eci.gov.in" target="_blank"></a>
+        </div>
 
+    <div class="card" data-name="Udyam">
+            <img src="udyam.png" alt="">
+            <h3>Udyam</h3>
+            <a href="https://udyamregistration.gov.in" target="_blank"></a>
+        </div>
+
+   <div class="card" data-name="e shram">
+            <img src="eshram-card.png" alt="">
+            <h3>e-Shram</h3>
+            <a href="https://eshram.gov.in" target="_blank"></a>
+        </div>
+
+    <div class="card" data-name="Vehicle Services ">
+            <img src="Vahan.png" alt="">
+            <h3>Vehicle Services </h3>
+            <a href="https://parivahan.gov.in" target="_blank"></a>
+        </div> 
+
+     <div class="card" data-name="IRCTC">
+            <img src="IRCTC.png" alt="">
+            <h3>Train Ticket</h3>
+            <a href="https://www.irctc.co.in" target="_blank"></a>
+        </div>
+
+      <div class="card" data-name="Mahavitran">
+            <img src="mahavitaran.png" alt="">
+            <h3>Electricity Bill</h3>
+            <a href="https://wss.mahadiscom.in/wss/wss?uiActionName=getViewPayBill" target="_blank"></a>
+        </div>
+
+     <div class="card" data-name="mazi naukari">
+            <img src="Mazi nokari.png" alt="">
+            <h3>Govt.Job Portal </h3>
+            <a href="https://majhinaukri.in" target="_blank"></a>
+        </div>
+
+     <div class="card" data-name="Passport">
+            <img src="Passport.png" alt="">
+            <h3>Passport</h3>
+            <a href="https://www.passportindia.gov.in" target="_blank"></a>
+        </div>
+
+    </div>
+
+<script src="script.js">
 </body>
 </html>
